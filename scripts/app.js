@@ -62,7 +62,7 @@ cityForm.addEventListener('submit', e => {
 
 });
 
-// Verifica se o usuário já fez uma pesquisa anteriormente ao carregar a página
+// Verifica se o usuário já fez uma pesquisa ao carregar a página e atualiza os dados.
 if(localStorage.getItem('city')){
     updateCity(localStorage.getItem('city'))
         .then(data => updateUI(data))
