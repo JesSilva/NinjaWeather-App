@@ -56,4 +56,15 @@ cityForm.addEventListener('submit', e => {
     updateCity(city).
         then(data => updateUI(data))
         .catch(err => console.error(err));
+
+    // Salva a pesquisa mais recente (localStorage)
+    localStorage.setItem('city', city);
+
 });
+
+// Verifica se o usuário já fez uma pesquisa anteriormente ao carregar a página
+if(localStorage.getItem('city')){
+    updateCity(localStorage.getItem('city'))
+        .then(data => updateUI(data))
+        .catch(err => console.error(err));
+}
